@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Waqar Ahmed — SQA Engineer</title>
+<title>Waqar Ahmed — Computer Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -113,7 +113,7 @@ section { padding: 100px 60px; max-width: 1200px; margin: 0 auto; }
   display: flex; align-items: center; gap: 6px; box-shadow: 0 10px 24px rgba(20,23,27,0.18);
 }
 .hero-verified .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
-.hero-stats { display: flex; gap: 28px; margin-top: 36px; }
+.hero-stats { display: flex; gap: 28px; margin-top: 36px; flex-wrap: wrap; }
 .hero-stat .num { font-family: var(--font-head); font-size: 28px; font-weight: 700; color: var(--teal); }
 .hero-stat .label { font-size: 11.5px; color: var(--ink-soft); font-family: var(--font-mono); }
 
@@ -132,6 +132,8 @@ section { padding: 100px 60px; max-width: 1200px; margin: 0 auto; }
 .about-info-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; }
 .about-info-item .label { font-size: 10.5px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; font-family: var(--font-mono); }
 .about-info-item .value { font-size: 13.5px; font-weight: 500; color: var(--ink); }
+.about-domains { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.about-domain-chip { background: var(--teal-dim); border: 1px solid rgba(14,124,123,0.22); color: var(--teal2); font-size: 11.5px; font-weight: 600; padding: 6px 13px; border-radius: 50px; font-family: var(--font-mono); }
 
 /* SERVICES */
 #services { border-top: 1px solid var(--border); max-width: 100%; padding-left: 60px; padding-right: 60px; background: var(--paper2); }
@@ -175,10 +177,15 @@ section { padding: 100px 60px; max-width: 1200px; margin: 0 auto; }
 /* PROJECTS */
 #projects { border-top: 1px solid var(--border); max-width: 100%; padding-left: 60px; padding-right: 60px; }
 .projects-inner { max-width: 1200px; margin: 0 auto; }
-.projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 60px; }
+.projects-filter { display: flex; gap: 10px; flex-wrap: wrap; margin: 30px 0 10px; }
+.filter-btn { background: var(--card); border: 1px solid var(--border-strong); color: var(--ink-soft); font-family: var(--font-mono); font-size: 12px; font-weight: 500; padding: 8px 16px; border-radius: 50px; cursor: pointer; transition: all 0.2s; }
+.filter-btn:hover { border-color: var(--teal); color: var(--teal2); }
+.filter-btn.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+.projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 30px; }
 .project-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.25s; }
+.project-card.hidden { display: none; }
 .project-card:hover { border-color: rgba(14,124,123,0.35); transform: translateY(-6px); box-shadow: 0 20px 40px rgba(20,23,27,0.08); }
-.project-thumb { height: 180px; background: var(--paper2); display: flex; align-items: center; justify-content: center; font-size: 50px; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+.project-thumb { height: 160px; background: var(--paper2); display: flex; align-items: center; justify-content: center; font-size: 50px; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .project-overlay { position: absolute; inset: 0; background: rgba(20,23,27,0.9); display: flex; align-items: center; justify-content: center; gap: 10px; opacity: 0; transition: opacity 0.3s; }
 .project-card:hover .project-overlay { opacity: 1; }
 .project-overlay a { background: var(--teal); color: #fff; padding: 9px 18px; border-radius: 50px; font-size: 12px; font-weight: 700; text-decoration: none; }
@@ -299,15 +306,16 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
         <span class="first">Waqar</span><br>Ahmed
       </h1>
       <div class="hero-title">
-        <span id="typed-role">SQA Engineer</span><span class="cursor">|</span>
+        <span id="typed-role">Computer Engineer</span><span class="cursor">|</span>
       </div>
       <p class="hero-desc">
-        Computer Engineering graduate (NUST, 2026) building a career in <strong>Software Quality Assurance</strong> —
-        manual & API testing, test case design, and defect tracking — with a growing specialization in
-        <strong>Machine Learning & AI</strong>. Certified in API Testing (Postman) and Applied ML Systems (FastAPI).
+        Computer Engineering graduate (NUST, 2026) with hands-on range across <strong>Software Quality Assurance,
+        Cloud Infrastructure (OpenStack/Docker/Kubernetes), Networking, Embedded Systems, and AI/ML</strong>.
+        Comfortable moving between test cases, virtual networks, FPGA logic, and Transformer models —
+        and always building something real to prove it.
       </p>
       <div class="hero-btns">
-        <a href="waqar_ahmed_QA_P%20%281%29.pdf" download class="btn-primary">Download QA CV</a>
+        <a href="#projects" class="btn-primary">View Projects</a>
         <a href="#contact" class="btn-outline">Contact Me</a>
       </div>
       <div class="hero-socials">
@@ -323,7 +331,8 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
       <div class="hero-stats">
         <div class="hero-stat"><div class="num">9+</div><div class="label">CERTIFICATIONS</div></div>
         <div class="hero-stat"><div class="num">2026</div><div class="label">NUST GRADUATE</div></div>
-        <div class="hero-stat"><div class="num">3+</div><div class="label">MAJOR PROJECTS</div></div>
+        <div class="hero-stat"><div class="num">8+</div><div class="label">PROJECTS BUILT</div></div>
+        <div class="hero-stat"><div class="num">5</div><div class="label">DOMAINS</div></div>
       </div>
     </div>
     <div class="hero-img-wrap fade-in" style="transition-delay:0.2s">
@@ -339,7 +348,7 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
 
 <!-- ══ ABOUT ══ -->
 <section id="about">
-  <div class="section-tag fade-in">TC-01 // ABOUT</div>
+  <div class="section-tag fade-in">ABOUT</div>
   <h2 class="section-title fade-in">Know Me <span>More</span></h2>
   <div class="about-grid">
     <div class="about-img-block fade-in">
@@ -353,15 +362,23 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
     </div>
     <div class="fade-in" style="transition-delay:0.2s">
       <div class="section-tag">WHO I AM</div>
-      <h3 class="section-title" style="font-size:clamp(26px,3vw,36px);">I'm an <span>SQA Engineer</span></h3>
+      <h3 class="section-title" style="font-size:clamp(26px,3vw,36px);">A <span>Computer Engineer</span> Who Builds Across Domains</h3>
       <p class="about-desc">
         I'm Waqar Ahmed, a Computer Engineering graduate from EME College, NUST (2026), based in Rawalpindi, Pakistan.
-        I'm building my career as a <strong>Software Quality Assurance Engineer</strong> — writing test cases, running manual and
-        API testing (Postman), and applying SDLC/STLC principles to catch bugs before they reach users. Alongside QA,
-        I'm actively growing my skills in <strong>Machine Learning & AI</strong>, recently completing a course on Applied ML Systems
-        with FastAPI. My Final Year Project — a Transformer-based Brain-Computer Interface achieving 96.9% accuracy —
-        reflects how I bring analytical rigor to both testing and AI work.
+        Rather than locking into one lane, I've deliberately built real projects across <strong>Software Quality Assurance,
+        Cloud Infrastructure, Computer Networking, Embedded Systems, and AI/ML</strong> — because Computer Engineering
+        gave me the fundamentals to work at any layer of the stack: from FPGA logic gates, to virtual cloud networks,
+        to Transformer models. My Final Year Project, a Transformer-based Brain-Computer Interface reaching 96.9%
+        accuracy, sits alongside hands-on work in OpenStack cloud deployment, API/manual testing, and processor design —
+        proof that I can adapt to whatever a team needs.
       </p>
+      <div class="about-domains">
+        <span class="about-domain-chip">SQA / TESTING</span>
+        <span class="about-domain-chip">CLOUD & OPENSTACK</span>
+        <span class="about-domain-chip">NETWORKING</span>
+        <span class="about-domain-chip">EMBEDDED SYSTEMS</span>
+        <span class="about-domain-chip">AI / ML</span>
+      </div>
       <div class="about-info">
         <div class="about-info-item">
           <div class="label">Name</div>
@@ -385,10 +402,10 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
         </div>
         <div class="about-info-item">
           <div class="label">Availability</div>
-          <div class="value" style="color:var(--teal2);">Open to Work — QA/SQA</div>
+          <div class="value" style="color:var(--teal2);">Open to Work</div>
         </div>
       </div>
-      <a href="waqar_ahmed_QA_P%20%281%29.pdf" download class="btn-primary">Download QA CV</a>
+      <a href="#contact" class="btn-primary">Get In Touch</a>
     </div>
   </div>
 </section>
@@ -396,39 +413,39 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
 <!-- ══ SERVICES ══ -->
 <section id="services" style="max-width:100%;padding-left:60px;padding-right:60px;">
   <div class="services-inner">
-    <div class="section-tag fade-in">TC-02 // SERVICES</div>
-    <h2 class="section-title fade-in">What I <span>Do</span></h2>
-    <p class="section-sub fade-in">Quality-first testing skills, paired with a growing ML/AI toolkit.</p>
+    <div class="section-tag fade-in">WHAT I DO</div>
+    <h2 class="section-title fade-in">Areas I <span>Work In</span></h2>
+    <p class="section-sub fade-in">Five domains, one engineering mindset — testing, cloud, networks, hardware, and AI.</p>
     <div class="services-grid">
       <div class="service-card fade-in">
         <span class="service-icon">🧪</span>
-        <div class="service-title">Manual & Functional Testing</div>
-        <p class="service-desc">Designing and executing test cases across SDLC/STLC, covering functional and non-functional requirements, regression cycles, and defect reporting.</p>
+        <div class="service-title">Software Quality Assurance</div>
+        <p class="service-desc">Manual & functional testing, test case design across SDLC/STLC, regression suites, defect tracking, and API testing with Postman (REST, OAuth 2.0, status codes).</p>
       </div>
       <div class="service-card fade-in" style="transition-delay:0.1s">
-        <span class="service-icon">🔌</span>
-        <div class="service-title">API Testing (Postman)</div>
-        <p class="service-desc">Certified in API Testing via Postman. Hands-on practice testing REST APIs including Spotify OAuth 2.0 and JSONPlaceholder — covering HTTP methods, status codes, and automated request collections.</p>
+        <span class="service-icon">☁️</span>
+        <div class="service-title">Cloud Infrastructure & OpenStack</div>
+        <p class="service-desc">Deploying and securing web apps on OpenStack private clouds — virtual network creation, VM provisioning, Docker containerization, and Kubernetes orchestration.</p>
       </div>
       <div class="service-card fade-in" style="transition-delay:0.2s">
-        <span class="service-icon">🐞</span>
-        <div class="service-title">Regression & Bug Tracking</div>
-        <p class="service-desc">Building regression test suites to catch reintroduced defects, and documenting issues clearly for developers to reproduce and fix efficiently.</p>
+        <span class="service-icon">🌐</span>
+        <div class="service-title">Computer Networking</div>
+        <p class="service-desc">Cisco-certified networking — IP addressing, subnetting, routing & switching, VLANs, and multi-router IPv6 topology design and security.</p>
       </div>
       <div class="service-card fade-in" style="transition-delay:0.3s">
-        <span class="service-icon">🔐</span>
-        <div class="service-title">Security-Aware Testing</div>
-        <p class="service-desc">Basic security testing awareness including SQL injection and common input-validation vulnerabilities, to help teams ship safer software.</p>
+        <span class="service-icon">🔧</span>
+        <div class="service-title">Embedded Systems & Digital Logic</div>
+        <p class="service-desc">FPGA and Verilog design (pipelined MIPS processor, DLD security timer), 8086 assembly-based IoT systems, and RISC-V signal processing.</p>
       </div>
       <div class="service-card fade-in" style="transition-delay:0.4s">
         <span class="service-icon">🤖</span>
-        <div class="service-title">Machine Learning & AI</div>
-        <p class="service-desc">Growing specialization in ML/AI — completed Applied Machine Learning Systems (FastAPI) and built a Transformer-based EEG classifier for my Final Year Project.</p>
+        <div class="service-title">AI & Machine Learning</div>
+        <p class="service-desc">Transformer-based EEG classification (96.9% accuracy) for my Final Year Project, plus applied ML deployment via FastAPI and classic ML pipelines with TensorFlow/Scikit-learn.</p>
       </div>
       <div class="service-card fade-in" style="transition-delay:0.5s">
-        <span class="service-icon">🌐</span>
-        <div class="service-title">Cisco Networking</div>
-        <p class="service-desc">Certified Cisco Networking professional — IP addressing, subnetting, routing, switching, VLANs, and network security fundamentals.</p>
+        <span class="service-icon">🎨</span>
+        <div class="service-title">UI/UX & Web Design</div>
+        <p class="service-desc">Wireframing, prototyping, and visual/interaction design fundamentals — applied to building this portfolio and other web interfaces.</p>
       </div>
     </div>
   </div>
@@ -436,45 +453,49 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
 
 <!-- ══ SKILLS ══ -->
 <section id="skills">
-  <div class="section-tag fade-in">TC-03 // SKILLS</div>
+  <div class="section-tag fade-in">SKILLS</div>
   <h2 class="section-title fade-in">Technical <span>Skills</span></h2>
   <div class="skills-layout">
     <div class="fade-in">
-      <div class="skills-col-title">QA / SQA SKILLS</div>
+      <div class="skills-col-title">CORE ENGINEERING SKILLS</div>
       <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">Test Case Design</span><span class="skill-pct">88%</span></div>
-        <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">API Testing (Postman)</span><span class="skill-pct">85%</span></div>
+        <div class="skill-header"><span class="skill-name">Software Testing (SQA)</span><span class="skill-pct">85%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">SDLC / STLC</span><span class="skill-pct">85%</span></div>
-        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        <div class="skill-header"><span class="skill-name">Cloud & OpenStack</span><span class="skill-pct">78%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">Regression Testing</span><span class="skill-pct">80%</span></div>
+        <div class="skill-header"><span class="skill-name">Networking (Cisco/IPv6)</span><span class="skill-pct">80%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">Functional vs. Non-Functional Testing</span><span class="skill-pct">82%</span></div>
-        <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+        <div class="skill-header"><span class="skill-name">Embedded Systems / Verilog / FPGA</span><span class="skill-pct">75%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
       </div>
-      <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">Security Testing Basics (SQL Injection)</span><span class="skill-pct">70%</span></div>
-        <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
-      </div>
-    </div>
-    <div class="fade-in" style="transition-delay:0.2s">
-      <div class="skills-col-title">ML/AI & SUPPORTING SKILLS</div>
       <div class="skill-item">
         <div class="skill-header"><span class="skill-name">Machine Learning / AI</span><span class="skill-pct">80%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">Python (FastAPI, TensorFlow, Keras)</span><span class="skill-pct">78%</span></div>
+        <div class="skill-header"><span class="skill-name">Docker & Kubernetes</span><span class="skill-pct">72%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
+      </div>
+    </div>
+    <div class="fade-in" style="transition-delay:0.2s">
+      <div class="skills-col-title">TOOLS & SUPPORTING SKILLS</div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">Python (FastAPI, TensorFlow, Keras)</span><span class="skill-pct">80%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">C / C++ / Verilog / MIPS Assembly</span><span class="skill-pct">78%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header"><span class="skill-name">Postman / API Testing</span><span class="skill-pct">85%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
       </div>
       <div class="skill-item">
         <div class="skill-header"><span class="skill-name">Problem Solving</span><span class="skill-pct">92%</span></div>
@@ -485,11 +506,7 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
         <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
       </div>
       <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">Communication (English)</span><span class="skill-pct">75%</span></div>
-        <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">Team Collaboration</span><span class="skill-pct">85%</span></div>
+        <div class="skill-header"><span class="skill-name">Team Collaboration & Communication</span><span class="skill-pct">85%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
       </div>
     </div>
@@ -497,25 +514,25 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
   <div class="tech-grid fade-in" style="margin-top:50px;">
     <div class="tech-badge"><span class="tech-icon">🧪</span>MANUAL TESTING</div>
     <div class="tech-badge"><span class="tech-icon">🔌</span>POSTMAN</div>
-    <div class="tech-badge"><span class="tech-icon">🐞</span>BUG TRACKING</div>
-    <div class="tech-badge"><span class="tech-icon">📋</span>TEST CASES</div>
+    <div class="tech-badge"><span class="tech-icon">☁️</span>OPENSTACK</div>
+    <div class="tech-badge"><span class="tech-icon">🐳</span>DOCKER</div>
+    <div class="tech-badge"><span class="tech-icon">☸️</span>KUBERNETES</div>
+    <div class="tech-badge"><span class="tech-icon">🌐</span>CISCO / IPv6</div>
+    <div class="tech-badge"><span class="tech-icon">🔧</span>VERILOG / FPGA</div>
+    <div class="tech-badge"><span class="tech-icon">🐧</span>LINUX</div>
     <div class="tech-badge"><span class="tech-icon">🐍</span>PYTHON</div>
     <div class="tech-badge"><span class="tech-icon">⚡</span>FASTAPI</div>
     <div class="tech-badge"><span class="tech-icon">🧠</span>TENSORFLOW</div>
-    <div class="tech-badge"><span class="tech-icon">📊</span>SCIKIT-LEARN</div>
-    <div class="tech-badge"><span class="tech-icon">🌐</span>CISCO</div>
-    <div class="tech-badge"><span class="tech-icon">🔐</span>SECURITY BASICS</div>
     <div class="tech-badge"><span class="tech-icon">🎨</span>UI/UX</div>
-    <div class="tech-badge"><span class="tech-icon">🤖</span>GEN AI</div>
   </div>
 </section>
 
 <!-- ══ CERTIFICATIONS ══ -->
 <section id="certs" style="max-width:100%;padding-left:60px;padding-right:60px;">
   <div class="certs-inner">
-    <div class="section-tag fade-in">TC-04 // CERTIFICATIONS</div>
+    <div class="section-tag fade-in">CERTIFICATIONS</div>
     <h2 class="section-title fade-in">Certifications & <span>Courses</span></h2>
-    <p class="section-sub fade-in">Continuously building QA depth and ML breadth through hands-on certifications.</p>
+    <p class="section-sub fade-in">Continuously building depth across QA, cloud, networking, and ML through hands-on certifications.</p>
     <div class="certs-grid">
       <div class="cert-card fade-in">
         <span class="cert-badge-new">New — 2026</span>
@@ -534,44 +551,50 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
         <a href="https://coursera.org/share/4a8672d03682f3614c19cfd191200149" target="_blank" class="cert-link">View Certificate ↗</a>
       </div>
       <div class="cert-card fade-in" style="transition-delay:0.2s">
+        <span class="cert-icon">☁️</span>
+        <div class="cert-title">Cloud Computing — OpenStack & Virtualization</div>
+        <div class="cert-issuer">UNIVERSITY COURSEWORK — NUST</div>
+        <p class="cert-desc">OpenStack private cloud administration on Linux — compute, storage, virtual networking, cloud security, and container orchestration with Docker/Kubernetes.</p>
+      </div>
+      <div class="cert-card fade-in" style="transition-delay:0.3s">
         <span class="cert-icon">🖼️</span>
         <div class="cert-title">Web Design: Wireframes to Prototypes</div>
         <div class="cert-issuer">COURSERA (CALIFORNIA INSTITUTE OF THE ARTS) — MARCH 2024</div>
         <p class="cert-desc">Turning wireframes into interactive prototypes — layout structure, component hierarchy, and prototyping workflow.</p>
         <a href="https://coursera.org/share/e2db1f2008623db14db56d685f792138" target="_blank" class="cert-link">View Certificate ↗</a>
       </div>
-      <div class="cert-card fade-in" style="transition-delay:0.3s">
+      <div class="cert-card fade-in" style="transition-delay:0.4s">
         <span class="cert-icon">🗺️</span>
         <div class="cert-title">Web Design: Strategy and Information Architecture</div>
         <div class="cert-issuer">COURSERA (CALIFORNIA INSTITUTE OF THE ARTS) — JANUARY 2024</div>
         <p class="cert-desc">Structuring content and navigation for usability — site maps, user flows, and information architecture principles.</p>
         <a href="https://coursera.org/share/96e15b4f00653a1c81058233f7364d2e" target="_blank" class="cert-link">View Certificate ↗</a>
       </div>
-      <div class="cert-card fade-in" style="transition-delay:0.4s">
+      <div class="cert-card fade-in" style="transition-delay:0.5s">
         <span class="cert-icon">🎯</span>
         <div class="cert-title">UX Design Fundamentals</div>
         <div class="cert-issuer">COURSERA (CALIFORNIA INSTITUTE OF THE ARTS) — DECEMBER 2023</div>
         <p class="cert-desc">Core UX principles — user research, usability heuristics, and designing around real user needs.</p>
       </div>
-      <div class="cert-card fade-in" style="transition-delay:0.5s">
+      <div class="cert-card fade-in" style="transition-delay:0.6s">
         <span class="cert-icon">🎨</span>
         <div class="cert-title">Visual Elements of User Interface Design</div>
         <div class="cert-issuer">COURSERA (CALIFORNIA INSTITUTE OF THE ARTS) — NOVEMBER 2023</div>
         <p class="cert-desc">Typography, color, layout, and visual hierarchy as tools for clear interface design.</p>
       </div>
-      <div class="cert-card fade-in" style="transition-delay:0.6s">
+      <div class="cert-card fade-in" style="transition-delay:0.7s">
         <span class="cert-icon">🌐</span>
         <div class="cert-title">CCNA: Introduction to Networks</div>
         <div class="cert-issuer">CISCO NETWORKING ACADEMY — FEBRUARY 2025</div>
         <p class="cert-desc">Network fundamentals, IP addressing, subnetting, routing & switching, and foundational network security.</p>
       </div>
-      <div class="cert-card fade-in" style="transition-delay:0.7s">
+      <div class="cert-card fade-in" style="transition-delay:0.8s">
         <span class="cert-icon">💻</span>
         <div class="cert-title">C++ Essentials</div>
         <div class="cert-issuer">CISCO NETWORKING ACADEMY — FEBRUARY 2025</div>
         <p class="cert-desc">Core C++ programming — syntax, control structures, functions, and object-oriented basics.</p>
       </div>
-      <div class="cert-card fade-in" style="transition-delay:0.8s">
+      <div class="cert-card fade-in" style="transition-delay:0.9s">
         <span class="cert-icon">📘</span>
         <div class="cert-title">CPA — Programming Essentials in C++</div>
         <div class="cert-issuer">CISCO NETWORKING ACADEMY — DECEMBER 2023</div>
@@ -584,11 +607,58 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
 <!-- ══ PROJECTS ══ -->
 <section id="projects" style="max-width:100%;padding-left:60px;padding-right:60px;">
   <div class="projects-inner">
-    <div class="section-tag fade-in">TC-05 // PROJECTS</div>
+    <div class="section-tag fade-in">PROJECTS</div>
     <h2 class="section-title fade-in">Featured <span>Projects</span></h2>
-    <p class="section-sub fade-in">Real projects I've built and tested — from API testing practice to neurotechnology.</p>
+    <p class="section-sub fade-in">Real projects across every domain I work in — filter by area, or scroll through all of them.</p>
+    <div class="projects-filter fade-in">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="sqa">SQA / Testing</button>
+      <button class="filter-btn" data-filter="cloud">Cloud / OpenStack</button>
+      <button class="filter-btn" data-filter="network">Networking</button>
+      <button class="filter-btn" data-filter="embedded">Embedded</button>
+      <button class="filter-btn" data-filter="ai">AI / ML</button>
+    </div>
     <div class="projects-grid">
-      <div class="project-card fade-in">
+
+      <div class="project-card fade-in" data-category="ai">
+        <div class="project-thumb">
+          🧠
+          <div class="project-overlay">
+            <a href="#" target="_blank">Details</a>
+            <a href="https://github.com/wanishah589" target="_blank" class="outline">GitHub</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">TRANSFORMER</span>
+            <span class="project-tag">EEG</span>
+            <span class="project-tag">TENSORFLOW</span>
+          </div>
+          <div class="project-name">Brain-Computer Interface (P300 Speller)</div>
+          <p class="project-desc">Final Year Project with HM Hospital Rawalpindi's Neurology Department — a Transformer-based EEG classifier reaching 96.9% accuracy. Recognized at COMPAC 2025; patent-filed through NUST.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" data-category="cloud" style="transition-delay:0.1s">
+        <div class="project-thumb">
+          ☁️
+          <div class="project-overlay">
+            <a href="#" target="_blank">Details</a>
+            <a href="https://github.com/wanishah589/portfolio-azure" target="_blank" class="outline">GitHub</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">OPENSTACK</span>
+            <span class="project-tag">DOCKER</span>
+            <span class="project-tag">KUBERNETES</span>
+          </div>
+          <div class="project-name">Website Deployment on OpenStack Private Cloud</div>
+          <p class="project-desc">Deployed and secured a web application on an OpenStack private cloud — virtual network creation, VM provisioning, containerization with Docker, and orchestration with Kubernetes.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" data-category="sqa" style="transition-delay:0.2s">
         <div class="project-thumb">
           🔌
           <div class="project-overlay">
@@ -606,9 +676,10 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
           <p class="project-desc">Hands-on API testing using Postman against Spotify's OAuth 2.0 API and JSONPlaceholder — covering GET/POST/PUT/DELETE methods, status code validation, and structured test collections.</p>
         </div>
       </div>
-      <div class="project-card fade-in" style="transition-delay:0.1s">
+
+      <div class="project-card fade-in" data-category="network" style="transition-delay:0.3s">
         <div class="project-thumb">
-          🧠
+          🌐
           <div class="project-overlay">
             <a href="#" target="_blank">Details</a>
             <a href="https://github.com/wanishah589" target="_blank" class="outline">GitHub</a>
@@ -616,15 +687,54 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
         </div>
         <div class="project-body">
           <div class="project-tags">
-            <span class="project-tag">TRANSFORMER</span>
-            <span class="project-tag">EEG</span>
-            <span class="project-tag">TENSORFLOW</span>
+            <span class="project-tag">IPv6</span>
+            <span class="project-tag">CISCO</span>
+            <span class="project-tag">ROUTING</span>
           </div>
-          <div class="project-name">Brain-Computer Interface (P300 Speller)</div>
-          <p class="project-desc">Final Year Project with HM Hospital Rawalpindi's Neurology Department — a Transformer-based EEG classifier reaching 96.9% accuracy and 85% faster communication for paralyzed patients. Recognized at COMPAC 2025; patent-filed through NUST.</p>
+          <div class="project-name">3-Router IPv6 Network Topology</div>
+          <p class="project-desc">Designed and configured a 3-router IPv6 network topology — subnetting, static/dynamic routing, and access control for a Cisco networking course project.</p>
         </div>
       </div>
-      <div class="project-card fade-in" style="transition-delay:0.2s">
+
+      <div class="project-card fade-in" data-category="embedded" style="transition-delay:0.4s">
+        <div class="project-thumb">
+          🔧
+          <div class="project-overlay">
+            <a href="#" target="_blank">Details</a>
+            <a href="https://github.com/wanishah589" target="_blank" class="outline">GitHub</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">FPGA</span>
+            <span class="project-tag">VERILOG</span>
+            <span class="project-tag">MIPS</span>
+          </div>
+          <div class="project-name">32-bit Pipelined MIPS Processor</div>
+          <p class="project-desc">Designed and implemented a pipelined 32-bit MIPS processor in Verilog, synthesized and tested on FPGA — covering datapath, hazard handling, and control logic.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" data-category="embedded" style="transition-delay:0.5s">
+        <div class="project-thumb">
+          🔥
+          <div class="project-overlay">
+            <a href="#" target="_blank">Details</a>
+            <a href="https://github.com/wanishah589" target="_blank" class="outline">GitHub</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">8086 ASSEMBLY</span>
+            <span class="project-tag">IoT</span>
+            <span class="project-tag">EMBEDDED</span>
+          </div>
+          <div class="project-name">8086-Based IoT Fire Alarm System</div>
+          <p class="project-desc">Built an 8086 assembly-driven IoT fire alarm system with sensor interfacing and real-time alerting logic — a hardware/software co-design project.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" data-category="ai" style="transition-delay:0.6s">
         <div class="project-thumb">
           ⚡
           <div class="project-overlay">
@@ -639,16 +749,55 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
             <span class="project-tag">ML DEPLOYMENT</span>
           </div>
           <div class="project-name">ML Model Serving with FastAPI</div>
-          <p class="project-desc">Applied coursework project deploying a trained ML model as a FastAPI endpoint — handling requests, returning predictions, and structuring a basic production-style ML service.</p>
+          <p class="project-desc">Deployed a trained ML model as a FastAPI endpoint — handling requests, returning predictions, and structuring a basic production-style ML service.</p>
         </div>
       </div>
+
+      <div class="project-card fade-in" data-category="embedded" style="transition-delay:0.7s">
+        <div class="project-thumb">
+          🎮
+          <div class="project-overlay">
+            <a href="#" target="_blank">Details</a>
+            <a href="https://github.com/wanishah589" target="_blank" class="outline">GitHub</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">FPGA</span>
+            <span class="project-tag">VERILOG</span>
+            <span class="project-tag">GAME LOGIC</span>
+          </div>
+          <div class="project-name">T-Rex FPGA Game</div>
+          <p class="project-desc">Recreated the Chrome T-Rex runner game entirely in Verilog hardware logic on FPGA — including collision detection, scoring, and VGA display output.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" data-category="embedded" style="transition-delay:0.8s">
+        <div class="project-thumb">
+          🏎️
+          <div class="project-overlay">
+            <a href="#" target="_blank">Details</a>
+            <a href="https://github.com/wanishah589" target="_blank" class="outline">GitHub</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">UNITY</span>
+            <span class="project-tag">BLENDER</span>
+            <span class="project-tag">3D</span>
+          </div>
+          <div class="project-name">Multi-Level Car Racing Game</div>
+          <p class="project-desc">Built a multi-level 3D car racing game using Unity and Blender — custom models, level design, and gameplay mechanics.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- ══ RESUME ══ -->
 <section id="resume">
-  <div class="section-tag fade-in">TC-06 // RESUME</div>
+  <div class="section-tag fade-in">RESUME</div>
   <h2 class="section-title fade-in">Resume & <span>Experience</span></h2>
   <div class="resume-layout">
     <div class="fade-in">
@@ -658,18 +807,18 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
           <div class="tl-period">2022 — 2026</div>
           <div class="tl-title">Bachelor of Computer Engineering</div>
           <div class="tl-place">EME College, NUST — Rawalpindi</div>
-          <div class="tl-desc">Core coursework in Software Engineering, Machine Learning, AI, and Networking. Final Year Project: Transformer-based Brain-Computer Interface for EEG signal classification.</div>
+          <div class="tl-desc">Core coursework spanning Cloud Computing (OpenStack), Computer Networks, Digital Logic Design, Software Engineering, and AI/ML. Final Year Project: Transformer-based Brain-Computer Interface for EEG signal classification.</div>
         </div>
         <div class="timeline-item">
           <div class="tl-period">2026</div>
           <div class="tl-title">API Testing (Postman) Certification</div>
-          <div class="tl-place">Self-paced Certification</div>
+          <div class="tl-place">Coursera</div>
           <div class="tl-desc">REST API fundamentals, HTTP methods, status codes, and OAuth 2.0-based hands-on testing.</div>
         </div>
         <div class="timeline-item">
           <div class="tl-period">2026</div>
           <div class="tl-title">Applied Machine Learning Systems (FastAPI)</div>
-          <div class="tl-place">Course Certification</div>
+          <div class="tl-place">Coursera</div>
           <div class="tl-desc">Serving ML models via FastAPI — from model training to production-ready API endpoints.</div>
         </div>
         <div class="timeline-item">
@@ -679,10 +828,10 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
           <div class="tl-desc">Design methodologies, color theory, user research, and wireframing.</div>
         </div>
         <div class="timeline-item">
-          <div class="tl-period">2023</div>
-          <div class="tl-title">Cisco Networking Certification</div>
+          <div class="tl-period">2023 — 2025</div>
+          <div class="tl-title">Cisco Networking Certifications</div>
           <div class="tl-place">Cisco Networking Academy</div>
-          <div class="tl-desc">Network fundamentals, subnetting, routing & switching, VLANs, and network security basics.</div>
+          <div class="tl-desc">Network fundamentals, subnetting, routing & switching, VLANs, network security basics, and C++ programming essentials.</div>
         </div>
       </div>
     </div>
@@ -691,9 +840,9 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
       <div class="timeline">
         <div class="timeline-item">
           <div class="tl-period">2026 — Present</div>
-          <div class="tl-title">SQA / QA Engineer — Job Search</div>
+          <div class="tl-title">Computer Engineer — Job Search</div>
           <div class="tl-place">Rawalpindi / Islamabad market</div>
-          <div class="tl-desc">Actively applying to SQA Engineer and QA Intern roles. Practicing test case design, regression testing, and API testing with Postman while building interview readiness in SDLC/STLC and core QA concepts.</div>
+          <div class="tl-desc">Actively applying across SQA, Cloud/DevOps, Networking, and AI/ML roles. Tailoring skills to each opportunity while continuing to build hands-on projects in every domain.</div>
         </div>
         <div class="timeline-item">
           <div class="tl-period">Oct 2025 — Nov 2025</div>
@@ -705,30 +854,27 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
           <div class="tl-period">2022 — 2026</div>
           <div class="tl-title">Final Year Project — BCI Research</div>
           <div class="tl-place">EME College, NUST, with HM Hospital Rawalpindi Neurology Dept.</div>
-          <div class="tl-desc">Built a Transformer-based EEG classifier (96.9% accuracy) enabling 85% faster communication for paralyzed patients, under Dr. Soiyba Javed. Recognized at COMPAC 2025; patent-filed through NUST.</div>
+          <div class="tl-desc">Built a Transformer-based EEG classifier (96.9% accuracy) under Dr. Soiyba Javed. Recognized at COMPAC 2025; patent-filed through NUST.</div>
         </div>
         <div class="timeline-item">
           <div class="tl-period">Ongoing</div>
-          <div class="tl-title">Growing into ML/AI</div>
+          <div class="tl-title">Cross-Domain Project Building</div>
           <div class="tl-place">Self-directed learning</div>
-          <div class="tl-desc">Pairing my QA foundation with applied ML coursework (FastAPI model deployment) to eventually work at the intersection of software quality and intelligent systems.</div>
+          <div class="tl-desc">Building real projects across cloud (OpenStack), networking (IPv6 topologies), embedded systems (FPGA/Verilog), and testing (API/manual QA) to stay versatile for different engineering roles.</div>
         </div>
       </div>
     </div>
-  </div>
-  <div style="text-align:center; margin-top:50px;" class="fade-in">
-    <a href="waqar_ahmed_QA_P%20%281%29.pdf" download class="btn-primary" style="font-size:15px;padding:15px 40px;">Download Full QA Resume</a>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" style="max-width:100%;padding-left:60px;padding-right:60px;">
   <div class="contact-inner">
-    <div class="section-tag fade-in">TC-07 // CONTACT</div>
+    <div class="section-tag fade-in">CONTACT</div>
     <h2 class="section-title fade-in">Contact <span>Me</span></h2>
     <div class="contact-layout">
       <div class="fade-in">
-        <p class="section-sub">Looking for QA/SQA Engineer or intern opportunities in Rawalpindi/Islamabad, or collaborations in ML/AI. Reach out anytime!</p>
+        <p class="section-sub">Looking for opportunities in SQA, Cloud/DevOps, Networking, Embedded Systems, or AI/ML — in Rawalpindi/Islamabad or remote. Reach out anytime!</p>
         <div class="contact-info-items">
           <div class="contact-info-item">
             <div class="contact-icon">📧</div>
@@ -776,7 +922,7 @@ footer { border-top: 1px solid rgba(250,249,246,0.1); padding: 32px 60px; displa
           </div>
           <div class="form-group">
             <label>Subject</label>
-            <input type="text" placeholder="QA role / Project collaboration...">
+            <input type="text" placeholder="Role / Project collaboration...">
           </div>
           <div class="form-group">
             <label>Message</label>
@@ -843,8 +989,21 @@ function handleSubmit(e) {
   setTimeout(() => s.style.display = 'none', 5000);
 }
 
+// PROJECT FILTER
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.project-card').forEach(card => {
+      const cat = card.dataset.category;
+      card.classList.toggle('hidden', filter !== 'all' && cat !== filter);
+    });
+  });
+});
+
 // TYPING EFFECT
-const roles = ['SQA Engineer', 'API Test Engineer', 'QA Analyst', 'ML & AI Enthusiast', 'BCI Researcher'];
+const roles = ['Computer Engineer', 'SQA Engineer', 'Cloud & OpenStack Engineer', 'Network Engineer', 'Embedded Systems Engineer', 'AI/ML Engineer'];
 let ri = 0, ci = 0, del = false;
 const typed = document.getElementById('typed-role');
 function typeEffect() {
